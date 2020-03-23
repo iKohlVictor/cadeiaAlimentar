@@ -29,7 +29,7 @@ public class Mamifero extends Animal
     @Override
     public String toString() 
     {
-        return  (super.toString()+ "hibernado=" + hibernado);
+        return  (super.toString()+ ", hibernado = " + hibernado);
     }
     //método do mamífero
     @Override

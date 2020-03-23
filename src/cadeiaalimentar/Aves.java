@@ -30,7 +30,7 @@ public class Aves extends Animal
     @Override
     public String toString() 
     {
-        return (super.toString() + "tamanhoDoBico=" + tamanhoDoBico);
+        return (super.toString() + ", tamanho Do Bico = " + tamanhoDoBico);
     }
     //Metodo das aves
     public String Voar()
