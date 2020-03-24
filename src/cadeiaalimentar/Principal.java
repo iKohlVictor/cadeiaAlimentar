@@ -33,6 +33,12 @@ public class Principal
             System.out.print("\n 4 - Alterar Status:");
             System.out.print("\n 0 - Sair..........:\n ->");
             opc1 = entrada.nextInt();
+            //Validação........
+            while (opc1 < 0 || opc1 > 4)
+            {
+                System.out.print("\n\n Opção errada escolha outra...:");
+                opc1 = entrada.nextInt();
+            }
             switch(opc1)
             {
                 case 1:
@@ -42,6 +48,12 @@ public class Principal
                     System.out.print("\n 3 - Repteis...:");
                     System.out.print("\n 0 - Sair......: \n ->");
                     opc2 = entrada.nextInt();
+                    //Validação........
+                     while (opc2 < 0 || opc2 > 3)
+                    {
+                        System.out.print("\n\n Opção errada escolha outra...:");
+                        opc2 = entrada.nextInt();
+                    }
                     switch(opc2)
                     {
                         case 1:
@@ -172,6 +184,12 @@ public class Principal
                     System.out.print("\n 2 - Aves......:");
                     System.out.print("\n 3 - Repteis...: \n ->");
                     opc2 = entrada.nextInt();
+                    //Validação........
+                     while (opc2 < 1 || opc2 > 3)
+                    {
+                        System.out.print("\n\n Opção errada escolha outra...:");
+                        opc2 = entrada.nextInt();
+                    }
                     switch(opc2)
                     {
                         case 1:
@@ -179,7 +197,13 @@ public class Principal
                             {
                                 if(listaDeAnimais.get(i) instanceof Mamifero)
                                 {
-                                    System.out.println("\n Mamifero:" + listaDeAnimais.get(i));
+                                    System.out.println("\n Mamifero:" + listaDeAnimais.get(i).toString());
+                                    
+                                    if(listaDeAnimais.get(i).isCaca() == false && listaDeAnimais.get(i).isEstado())
+                                    {
+                                        System.out.print("\n " + listaDeAnimais.get(i).Alimentar());
+                                    }
+                                    
                                 }
                             }
                         break;
@@ -190,6 +214,10 @@ public class Principal
                                 {
                                    System.out.println("\n Aves:" + listaDeAnimais.get(i));
                                 }
+                                if(listaDeAnimais.get(i).isCaca() == false && listaDeAnimais.get(i).isEstado())
+                                    {
+                                        System.out.print("\n " + listaDeAnimais.get(i).Alimentar());
+                                    }
                             }
                         break; 
                         case 3:
@@ -199,6 +227,10 @@ public class Principal
                                 {
                                     System.out.println("\n Repteis:" + listaDeAnimais.get(i));
                                 }
+                                if(listaDeAnimais.get(i).isCaca() == false && listaDeAnimais.get(i).isEstado())
+                                    {
+                                        System.out.print("\n " + listaDeAnimais.get(i).Alimentar());
+                                    }
                             }
                         break;    
                     }
@@ -218,14 +250,13 @@ public class Principal
                     System.out.print("\n Digite o código do animal..:");
                     cod = entrada.nextInt();
                     
-                    //Validando existencia.
+                    //Validando existencia. errada
                     for(int i = 0; i < listaDeAnimais.size(); i++)
                     {
-                        if(listaDeAnimais.get(i).getCod() != cod)
+                        if(cod != listaDeAnimais.get(i).getCod())
                         {
                             System.out.print("Codigo Inexistente..digite outro..:");
                             cod = entrada.nextInt();
-                            i = 0;
                         }
                      }
                     //Achando a localização

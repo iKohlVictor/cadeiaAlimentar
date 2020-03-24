@@ -29,12 +29,19 @@ public class Mamifero extends Animal
     @Override
     public String toString() 
     {
-        return  (super.toString()+ ", hibernado = " + hibernado);
+        if(this.hibernado)
+        {
+            return (super.toString() + "\n Hibernando durante um bom tempo como eu queria!");
+        }
+        else
+        {
+            return (super.toString() + "\n Não estou Hibernando mas gostaria!");
+        }
     }
     //método do mamífero
     @Override
     public String Alimentar()
     {
-        return("tomando leite... Pronto, barriga cheia e azia a caminho.");
+        return("Tomando leite... Pronto, barriga cheia e azia a caminho.");
     }
 }

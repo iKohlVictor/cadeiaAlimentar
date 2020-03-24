@@ -29,7 +29,7 @@ public class Repteis extends Animal
     @Override
     public String toString() 
     {
-        return (super.toString() + ", temperatura Do Corpo =" + temperaturaDoCorpo);
+        return (super.toString() + ", temperatura Do Corpo = " + temperaturaDoCorpo + "°C");
     }
     //método dos repteis
     public String defender()

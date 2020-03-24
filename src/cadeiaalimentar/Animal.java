@@ -64,14 +64,30 @@ public class Animal
     {
         this.caca = caca;
     }
+    
     //toString
-    @Override
+    @Override 
     public String toString() 
     {
-        return " cod = " + cod + ", peso = " + peso +
-                ", estado = " + estado + ", caca = " + 
-                caca;
-    }
+        if(this.estado == false)
+        {
+            return (" cod = " + cod + ", peso = " + peso +" kg"+
+                ", estado = Dormindo, caça = Não Estar caçando");
+        }
+        else
+        {
+            if(this.caca)
+            {
+                return (" cod = " + cod + ", peso = " + peso +" kg"+
+                ", estado = Acordado, caça = Estar caçando");
+            }
+            else
+            {
+                return (" cod = " + cod + ", peso = " + peso +" kg"+
+                ", estado = Acordado, caça = Não Estar caçando"); 
+            }
+        }
+    }   
     //método do animal
     public String Alimentar()
     {
